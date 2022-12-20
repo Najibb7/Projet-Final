@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 
 export default function Nav() {
     useEffect(() => {
-        if (cookie.load("role") == "user") {
+        if (cookie.load("role") === "user" || cookie.load('role')==="admin") {
             document.getElementById("link2").className = "nav-link visually-hidden"
         }
     }, []);
@@ -30,9 +30,6 @@ export default function Nav() {
 
                     <div id="main-nav" className="collapse navbar-collapse">
                         <ul className="navbar-nav">
-                            {/* <li className="nav-item">
-                                <Link to="/" className="nav-link active" aria-current="page" >Accueil</Link>
-                            </li> */}
                             <li className="nav-item ">
                                 <Link to="/gda" className="nav-link active" aria-current="page" >Gestion des abscences</Link>
                             </li>
